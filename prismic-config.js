@@ -1,11 +1,8 @@
-import Prismic from '@prismicio/client';
+/* import Prismic from '@prismicio/client'; */
+import Prismic from "prismic-javascript";
 
-export const apiEndpoint = 'https://clepi-portfolio.prismic.io/api/v2'
-export const client = Prismic.client(apiEndpoint)
+export const apiEndpoint = process.env.PRISMIC_URL;
 
-const init = async () => {
-  const data = await client.query('')
-  console.log(data)
-}
+export const accessToken = process.env.PRISMIC_TOKEN;
 
-init()
+export const client = Prismic.client(apiEndpoint, { accessToken })

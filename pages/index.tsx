@@ -1,16 +1,18 @@
 import type { NextPage } from 'next';
 import Layout from '../components/layout/Layout';
-import Prismic from '@prismicio/client';
-import { apiEndpoint } from '../prismic-config';
+import { constants } from '../utils/constants/constants';
+import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 
 const Home: NextPage = () => {
-  const data = Prismic.getApi(apiEndpoint);
-  console.log(data);
-
   return (
     <div>
       <Layout>
-        <h1>My portfolio</h1>
+        <h1>{constants.fullname}</h1>
+        <p>{constants.title}</p>
+        <div className='flex'>
+          <AiFillLinkedin />
+          <AiFillGithub />
+        </div>
       </Layout>
     </div>
   );
