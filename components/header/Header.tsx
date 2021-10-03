@@ -1,14 +1,18 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { AiOutlineHome, AiOutlineLaptop, AiOutlineMail } from 'react-icons/ai';
-import { GrUserFemale } from 'react-icons/gr';
+import {
+  AiOutlineHome,
+  AiOutlineLaptop,
+  AiOutlineMail,
+  AiOutlineUser,
+} from 'react-icons/ai';
 import { constants } from '../../utils/constants/constants';
 
 type Props = {};
 
 const nav = [
   { path: '/', icon: <AiOutlineHome />, label: 'Home' },
-  { path: '/about', icon: <GrUserFemale />, label: 'About' },
+  { path: '/about', icon: <AiOutlineUser />, label: 'About' },
   { path: '/portfolio', icon: <AiOutlineLaptop />, label: 'Portfolio' },
   { path: '/contact', icon: <AiOutlineMail />, label: 'Contact' },
 ];
@@ -22,11 +26,11 @@ const Header: FC<Props> = () => {
           {nav.map((page) => (
             <li
               key={nav.indexOf(page)}
-              className='flex hover:bg-gray-200 text-2xl sm:text-base'
+              className='flex text-2xl sm:text-base sm:text-gray-400 sm:hover:tracking-widest sm:hover:text-current sm:hover:duration-700'
             >
               {page.icon}
               <Link href={page.path}>
-                <a>{page.label}</a>
+                <a className='px-4'>{page.label}</a>
               </Link>
             </li>
           ))}

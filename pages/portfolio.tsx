@@ -12,8 +12,6 @@ type Props = {
 
 const Portfolio: NextPage<Props> = (props) => {
   const { paths, portfolio } = props;
-
-  console.log(portfolio);
   // result : [{…}, {…}, {…}]
   // [0] :
   /* 
@@ -44,11 +42,6 @@ const Portfolio: NextPage<Props> = (props) => {
 
 // "getStaticProps" returns an object that contains the props, and inside the info that we want to send into the component
 export async function getStaticProps() {
-  // The getSingle means we want to retrieve a unique content
-  // We pass as argument the UID we established for in the custom type
-
-  /* const home = await client.getSingle("blog_home") */
-
   const res = await client.query(
     Prismic.Predicates.at('document.type', 'project-test'), // 2nd arg is the API ID of the custom type
     {
@@ -62,7 +55,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      /* home, */
       portfolio,
     },
   };
