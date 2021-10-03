@@ -6,12 +6,11 @@ import { client } from '../prismic-config';
 // "prismic-reactjs" You can convert rich text from Prismic into HTML with it
 
 type Props = {
-  paths: any;
   portfolio: string[];
 };
 
 const Portfolio: NextPage<Props> = (props) => {
-  const { paths, portfolio } = props;
+  const { portfolio } = props;
   // result : [{…}, {…}, {…}]
   // [0] :
   /* 
