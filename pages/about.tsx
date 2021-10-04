@@ -19,8 +19,6 @@ type Props = {
 const About: NextPage<Props> = (props) => {
   const { about } = props;
 
-  console.log(about);
-
   return (
     <div>
       <Layout>
@@ -54,7 +52,7 @@ export async function getStaticProps() {
   const res = await client.query(
     Prismic.Predicates.at('document.type', 'abouttest')
   );
-  const about = res.results[0].data;
+  const about = await res.results[0].data;
 
   return {
     props: {
