@@ -9,7 +9,7 @@ type Props = {
 const Layout: FC<Props> = (props) => {
   const { children } = props;
   return (
-    <div className='flex flex-col sm:flex-row'>
+    <div className='relative flex flex-col sm:flex-row'>
       <div className='flex flex-col h-screen w-full sm:w-3/12 justify-center items-center'>
         <div>
           <Header />
