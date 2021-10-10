@@ -3,8 +3,6 @@ import Layout from '../components/layout/Layout';
 import Prismic from 'prismic-javascript';
 import { client } from '../prismic-config';
 import ProjectHero from '../components/project/ProjectHero';
-import { useState } from 'react';
-import ProjectDescription from '../components/project/ProjectDescription';
 // import { RichText } from 'prismic-reactjs';
 // "prismic-reactjs" You can convert rich text from Prismic into HTML with it
 
@@ -14,14 +12,6 @@ type Props = {
 
 const Portfolio: NextPage<Props> = (props) => {
   const { portfolio } = props;
-
-  const [open, setOpen] = useState(false);
-  const openDescription = () => {
-    setOpen(true);
-  };
-  const closeDescription = () => {
-    setOpen(false);
-  };
 
   return (
     <div>
@@ -33,15 +23,11 @@ const Portfolio: NextPage<Props> = (props) => {
               {portfolio.map((project: any, index: number) => (
                 <ProjectHero
                   key={index}
-                  title={project.title[0].text}
-                  openDescription={openDescription}
+                  title={project.data.title[0].text}
+                  uid={project.uid}
                 />
               ))}
             </div>
-            <ProjectDescription
-              open={open}
-              closeDescription={closeDescription}
-            />
           </div>
         </div>
       </Layout>
@@ -53,13 +39,10 @@ const Portfolio: NextPage<Props> = (props) => {
 export async function getStaticProps() {
   const res = await client.query(
     Prismic.Predicates.at('document.type', 'project-test') // 2nd arg is the API ID of the custom type
-    /* {
-      orderings: '[my.post.date desc]',
-    } */
   );
 
   const portfolio = await res.results.map((project) => {
-    return project.data;
+    return project;
   });
 
   return {
