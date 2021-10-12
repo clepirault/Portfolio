@@ -35,7 +35,7 @@ const Project: NextPage<Props> = (props) => {
 export async function getStaticProps(context: any) {
   const { params } = context;
 
-  const projectUid = await params.uid;
+  const projectUid = params.uid;
 
   const res = await client.query(
     Prismic.Predicates.at('document.type', 'project-test')

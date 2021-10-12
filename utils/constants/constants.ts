@@ -1,5 +1,15 @@
 export const constants = {
   fullname: 'Clémence Pirault',
   title: 'Junior web Developer',
-  resume: 'Télécharger mon CV',
+  resume: 'Resume',
+  skills: 'Learn more',
+  links: {
+    linkedin: 'https://www.linkedin.com/in/clemence-pirault/',
+    github: 'https://github.com/clepirault',
+  },
+  pages: {
+    about: 'about',
+    portfolio: 'portfolio',
+    contact: 'contact',
+  },
 };

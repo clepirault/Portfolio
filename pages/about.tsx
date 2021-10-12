@@ -6,7 +6,9 @@ import { RichText } from 'prismic-reactjs';
 import { constants } from '../utils/constants/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../ui/button/Button';
+import Button from '../components/button/Button';
+import PageTitle from '../components/title/PageTitle';
+import AboutContent from '../components/content/AboutContent';
 
 type About = {
   // content
@@ -22,21 +24,51 @@ const About: NextPage<Props> = (props) => {
   return (
     <div>
       <Layout>
-        <h1>{about.title[0].text}</h1>
-        <Image
-          src={about.image.url}
-          alt={constants.fullname}
-          width='300'
-          height='300'
-        />
-        <p className='break-words font-aboutDescription text-gray-400'>
-          {RichText.asText(about.description)}
-        </p>
-        <Button variant='download'>
-          <Link href={about.link.url}>
-            <a>{constants.resume}</a>
-          </Link>
-        </Button>
+        <PageTitle>{constants.pages.about}</PageTitle>
+        <div className='flex flex-col my-12 sm:grid sm:grid-cols-2 sm:mx-12'>
+          <div className='flex justify-center mx-4'>
+            <Image
+              src={about.image.url}
+              alt={constants.fullname}
+              width='450'
+              height='300'
+            />
+          </div>
+          <div className='mx-4 my-4 sm:my-0'>
+            <AboutContent
+              title='From Tourism...'
+              content={RichText.asText(about.description)}
+            />
+          </div>
+        </div>
+        <div className='w-full justify-around m-auto flex sm:w-1/3 sm:justify-between'>
+          <Button variant='download'>
+            <Link href={about.link.url}>
+              <a target='_blank'>{constants.resume}</a>
+            </Link>
+          </Button>
+          <Button>
+            <Link href={about.link.url}>
+              <a target='_blank'>{constants.skills}</a>
+            </Link>
+          </Button>
+        </div>
+        <div className='flex flex-col my-12 sm:grid sm:grid-cols-2 sm:mx-12'>
+          <div className='mx-4 my-4 sm:my-0'>
+            <AboutContent
+              title='...To web Development'
+              content={RichText.asText(about.description)}
+            />
+          </div>
+          <div className='flex justify-center mx-4'>
+            <Image
+              src={about.image.url}
+              alt={constants.fullname}
+              width='450'
+              height='300'
+            />
+          </div>
+        </div>
       </Layout>
     </div>
   );

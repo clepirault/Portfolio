@@ -6,12 +6,14 @@ type Props = {
   uid: string;
 };
 
+// bg-gradient-to-tr from-primaryBlue to-secondaryBlue
+
 const ProjectHero: FC<Props> = (props) => {
   const { title, uid } = props;
   return (
-    <div className='bg-black text-white w-80 h-80 m-4 sm:hover:bg-gray-700'>
+    <div className='flex justify-center items-center w-80 h-80 m-4 bg-black text-white sm:border-solid sm:border-4 sm:border-black sm:bg-gray-100 sm:text-black sm:hover:bg-black sm:hover:text-white'>
       <Link href={`/portfolio/${uid}`}>
-        <a>{title}</a>
+        <a className='text-5xl'>{title}</a>
       </Link>
     </div>
   );

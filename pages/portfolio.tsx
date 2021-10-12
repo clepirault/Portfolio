@@ -3,6 +3,8 @@ import Layout from '../components/layout/Layout';
 import Prismic from 'prismic-javascript';
 import { client } from '../prismic-config';
 import ProjectHero from '../components/project/ProjectHero';
+import PageTitle from '../components/title/PageTitle';
+import { constants } from '../utils/constants/constants';
 // import { RichText } from 'prismic-reactjs';
 // "prismic-reactjs" You can convert rich text from Prismic into HTML with it
 
@@ -16,9 +18,9 @@ const Portfolio: NextPage<Props> = (props) => {
   return (
     <div>
       <Layout>
-        <div className='flex flex-col mt-12'>
-          <h1 className='mb-12'>Portfolio</h1>
-          <div className='flex justify-center'>
+        <div className='flex flex-col'>
+          <PageTitle>{constants.pages.portfolio}</PageTitle>
+          <div className='flex justify-center mb-12 mt-12'>
             <div className='sm:grid sm:grid-cols-2 flex flex-col'>
               {portfolio.map((project: any, index: number) => (
                 <ProjectHero
