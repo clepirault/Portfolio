@@ -25,7 +25,7 @@ const About: NextPage<Props> = (props) => {
     <div>
       <Layout>
         <PageTitle>{constants.pages.about}</PageTitle>
-        <div className='flex flex-col my-12 sm:grid sm:grid-cols-2 sm:mx-12'>
+        <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
           <div className='flex justify-center mx-4'>
             <Image
               src={about.image.url}
@@ -41,7 +41,7 @@ const About: NextPage<Props> = (props) => {
             />
           </div>
         </div>
-        <div className='w-full justify-around m-auto flex sm:w-1/3 sm:justify-between'>
+        <div className='w-full flex justify-around m-auto sm:w-1/3 sm:justify-between'>
           <Button variant='download'>
             <Link href={about.link.url}>
               <a target='_blank'>{constants.resume}</a>
@@ -53,7 +53,7 @@ const About: NextPage<Props> = (props) => {
             </Link>
           </Button>
         </div>
-        <div className='flex flex-col my-12 sm:grid sm:grid-cols-2 sm:mx-12'>
+        <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
           <div className='mx-4 my-4 sm:my-0'>
             <AboutContent
               title='...To web Development'

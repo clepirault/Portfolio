@@ -11,10 +11,10 @@ const Layout: FC<Props> = (props) => {
   return (
     <div className='relative flex flex-col sm:flex-row'>
       <div className='flex flex-col h-screen w-full sm:w-3/12 justify-center items-center'>
-        <div>
+        <div className='sm:block sm:fixed'>
           <Header />
         </div>
-        <div className='hidden sm:block sm:absolute sm:bottom-0 sm:left-0'>
+        <div className='hidden sm:block sm:fixed sm:bottom-0 sm:left-0'>
           <Footer />
         </div>
       </div>

@@ -7,10 +7,10 @@ type Props = {};
 const Footer: FC<Props> = () => {
   return (
     <footer>
-      <h3 className='flex'>
+      <h5 className='flex items-center'>
         <AiOutlineCopyrightCircle /> {constants.fullname}{' '}
         {new Date().getFullYear()}
-      </h3>
+      </h5>
     </footer>
   );
 };

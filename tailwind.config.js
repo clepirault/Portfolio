@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'aboutDescription': ['Mulish']
+        'aboutDescription': ['Nunito Sans'],
+        'handwriting': ['Pacifico']
+        // Mulish
        },
       textColor: {
        'secondaryTitle': '#b9aa95'

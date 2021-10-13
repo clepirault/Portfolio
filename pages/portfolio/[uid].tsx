@@ -12,6 +12,7 @@ type Props = {
 
 const Project: NextPage<Props> = (props) => {
   const { project } = props;
+
   const [open, setOpen] = useState(true);
 
   const router = useRouter();
@@ -27,6 +28,8 @@ const Project: NextPage<Props> = (props) => {
         open={open}
         closeDescription={closeDescription}
         title={project.title[0].text}
+        image={project.image.url}
+        description={project.description[0].text}
       />
     </Layout>
   );
