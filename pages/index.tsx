@@ -19,7 +19,7 @@ const Home: NextPage<Props> = (props) => {
   return (
     <div>
       <Layout>
-        <div className='flex flex-col sm:items-end sm:mt-36 sm:mx-36 sm:mb-24'>
+        <div className='flex flex-col sm:items-end sm:mt-36 sm:mx-36 sm:mb-12'>
           <MainTitle>{homepage.primarytitle[0].text}</MainTitle>
           <SecondaryTitle>{homepage.secondarytitle[0].text}</SecondaryTitle>
           <div className='flex text-3xl mt-4 w-60 justify-around sm:mr-16'>
@@ -39,12 +39,12 @@ const Home: NextPage<Props> = (props) => {
             </div>
           </div>
         </div>
-        <div className='flex justify-center mb-12 mx-4 sm:mx-12 sm:mt-0 sm:w-1/2'>
+        <div className='flex justify-center mb-12 mx-4 sm:mx-12 sm:w-1/2'>
           <Image
             src={homepage.profile.url}
             alt={homepage.profile.alt}
-            width='450'
-            height='300'
+            width='600'
+            height='400'
           />
         </div>
       </Layout>
