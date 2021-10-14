@@ -9,6 +9,8 @@ import Button from '../components/button/Button';
 import PageTitle from '../components/title/PageTitle';
 import AboutContent from '../components/content/AboutContent';
 import MainLayout from '../components/layout/MainLayout';
+import SkillsContent from '../components/content/SkillsContent';
+import { useState } from 'react';
 
 type About = {
   // content
@@ -20,6 +22,12 @@ type Props = {
 
 const About: NextPage<Props> = (props) => {
   const { about } = props;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
 
   return (
     <MainLayout>
@@ -46,11 +54,7 @@ const About: NextPage<Props> = (props) => {
             <a target='_blank'>{constants.resume}</a>
           </Link>
         </Button>
-        <Button>
-          <Link href={about.link.url}>
-            <a target='_blank'>{constants.skills}</a>
-          </Link>
-        </Button>
+        <Button onClick={handleOpenModal}>{constants.skills}</Button>
       </div>
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
         <div className='mx-4 my-4 sm:my-0'>
@@ -68,6 +72,7 @@ const About: NextPage<Props> = (props) => {
           />
         </div>
       </div>
+      {isModalOpen && <SkillsContent />}
     </MainLayout>
   );
 };

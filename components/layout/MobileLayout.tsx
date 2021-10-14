@@ -1,5 +1,4 @@
 import { FC, ReactNode, useState } from 'react';
-import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 

@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from 'next/image';
 import AboutContent from '../content/AboutContent';
+import MainModal from '../modal/MainModal';
 
 type Props = {
   closeDescription?: () => void;
@@ -11,8 +11,6 @@ type Props = {
   image: any;
   description: string;
 };
-
-Modal.setAppElement('div');
 
 const project = {
   image: 'project',
@@ -23,12 +21,7 @@ const project = {
 const ProjectDescription: FC<Props> = (props) => {
   const { closeDescription, open, title, image, description } = props;
   return (
-    <Modal
-      isOpen={open}
-      onRequestClose={closeDescription}
-      shouldCloseOnOverlayClick={false}
-      className='relative w-11/12 h-5/6 mt-8 sm:w-3/5 sm:h-3/4 m-auto sm:mt-16 rounded-sm shadow-md bg-white'
-    >
+    <MainModal open={open} closeDescription={closeDescription}>
       <button onClick={closeDescription} className='absolute top-0 right-0'>
         <AiOutlineClose />
       </button>
@@ -46,7 +39,7 @@ const ProjectDescription: FC<Props> = (props) => {
           <h3>{project.links}</h3>
         </div>
       </div>
-    </Modal>
+    </MainModal>
   );
 };
 
