@@ -1,15 +1,13 @@
 import type { NextPage } from 'next';
-import Layout from '../components/layout/Layout';
+import MainLayout from '../components/layout/MainLayout';
 import PageTitle from '../components/title/PageTitle';
 import { constants } from '../utils/constants/constants';
 
 const Contact: NextPage = () => {
   return (
-    <div>
-      <Layout>
-        <PageTitle>{constants.pages.contact}</PageTitle>
-      </Layout>
-    </div>
+    <MainLayout>
+      <PageTitle>{constants.pages.contact}</PageTitle>
+    </MainLayout>
   );
 };
 
