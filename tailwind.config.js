@@ -4,12 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'aboutDescription': ['Nunito Sans'],
-        'handwriting': ['Pacifico']
-        // Mulish
+        'aboutDescription': ['Nunito Sans'] // text description in about page
        },
       textColor: {
-       'secondaryTitle': '#b9aa95'
+       'secondaryTitle': '#b9aa95' // secondary title in homepage
       },
        backgroundColor: theme => ({
         'primaryBlue': '#00122e',

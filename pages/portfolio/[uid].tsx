@@ -3,8 +3,8 @@ import { client } from '../../prismic-config';
 import type { NextPage } from 'next';
 import ProjectDescription from '../../components/project/ProjectDescription';
 import { useState } from 'react';
-import Layout from '../../components/layout/Layout';
 import { useRouter } from 'next/router';
+import MainLayout from '../../components/layout/MainLayout';
 
 type Props = {
   project: any;
@@ -23,7 +23,7 @@ const Project: NextPage<Props> = (props) => {
   };
 
   return (
-    <Layout>
+    <MainLayout>
       <ProjectDescription
         open={open}
         closeDescription={closeDescription}
@@ -31,7 +31,7 @@ const Project: NextPage<Props> = (props) => {
         image={project.image.url}
         description={project.description[0].text}
       />
-    </Layout>
+    </MainLayout>
   );
 };
 

@@ -19,33 +19,31 @@ const MobileLayout: FC<Props> = (props) => {
   };
 
   return (
-    <div className='relative flex flex-col sm:flex-row'>
+    <div className='relative flex flex-col'>
       {menuOpen && (
         <div>
           <button
-            className='text-4xl block absolute top-0 right-0 sm:hidden'
+            className='text-4xl block absolute top-0 right-0'
             type='button'
             onClick={handleClose}
           >
             <AiOutlineClose />
           </button>
-          <div className='flex flex-col h-screen w-full sm:w-3/12 justify-center items-center'>
-            <div className='sm:block sm:fixed'>
+          <div className='flex flex-col h-screen justify-center items-center'>
+            <div className='block fixed'>
               <Header />
             </div>
           </div>
         </div>
       )}
       {!menuOpen && (
-        <main className='relative sm:w-9/12 bg-gray-100'>
-          <button
-            className='text-4xl block absolute top-0 right-0 sm:hidden'
-            type='button'
-            onClick={handleOpen}
-          >
-            <AiOutlineMenu />
-          </button>
-          {children}
+        <main className='bg-gray-100'>
+          <div className='bg-white flex justify-end'>
+            <button className='text-4xl' type='button' onClick={handleOpen}>
+              <AiOutlineMenu />
+            </button>
+          </div>
+          <div>{children}</div>
         </main>
       )}
     </div>

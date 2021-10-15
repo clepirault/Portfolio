@@ -22,7 +22,10 @@ const ProjectDescription: FC<Props> = (props) => {
   const { closeDescription, open, title, image, description } = props;
   return (
     <MainModal open={open} closeDescription={closeDescription}>
-      <button onClick={closeDescription} className='absolute top-0 right-0'>
+      <button
+        onClick={closeDescription}
+        className='absolute top-0 right-0 text-2xl'
+      >
         <AiOutlineClose />
       </button>
       <div className='sm:grid sm:grid-cols-2 p-8'>

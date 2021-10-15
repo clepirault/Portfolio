@@ -35,22 +35,23 @@ const About: NextPage<Props> = (props) => {
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
         <div className='flex justify-center mx-4'>
           <Image
-            src={about.image.url}
+            src={about.image1.url}
             alt={constants.fullname}
-            width='450'
-            height='300'
+            quality={100}
+            width={450}
+            height={300}
           />
         </div>
         <div className='mx-4 my-4 sm:my-0'>
           <AboutContent
-            title='From Tourism...'
-            content={RichText.asText(about.description)}
+            title={about.title1[0].text}
+            content={RichText.asText(about.description1)}
           />
         </div>
       </div>
       <div className='w-full flex justify-around m-auto sm:w-1/3 sm:justify-between'>
         <Button variant='download'>
-          <Link href={about.link.url}>
+          <Link href={about.link1.url}>
             <a target='_blank'>{constants.resume}</a>
           </Link>
         </Button>
@@ -59,13 +60,13 @@ const About: NextPage<Props> = (props) => {
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
         <div className='mx-4 my-4 sm:my-0'>
           <AboutContent
-            title='...To web Development'
-            content={RichText.asText(about.description)}
+            title={about.title2[0].text}
+            content={RichText.asText(about.description2)}
           />
         </div>
         <div className='flex justify-center mx-4'>
           <Image
-            src={about.image.url}
+            src={about.image2.url}
             alt={constants.fullname}
             width='450'
             height='300'

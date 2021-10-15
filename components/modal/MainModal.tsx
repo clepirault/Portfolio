@@ -16,7 +16,7 @@ const MainModal: FC<Props> = (props) => {
       isOpen={open}
       onRequestClose={closeDescription}
       shouldCloseOnOverlayClick={false}
-      className='relative w-11/12 h-5/6 mt-8 sm:w-3/5 sm:h-3/4 m-auto sm:mt-16 rounded-sm shadow-md bg-white'
+      className='relative w-11/12 h-5/6 mt-8 sm:w-3/5 sm:h-3/4 m-auto sm:mt-16 rounded-sm shadow-md bg-white overflow-auto'
     >
       {children}
     </Modal>
