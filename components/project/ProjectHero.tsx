@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import Button from '../button/Button';
 
 type Props = {
   title: string;

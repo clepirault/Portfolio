@@ -50,12 +50,14 @@ const About: NextPage<Props> = (props) => {
         </div>
       </div>
       <div className='w-full flex justify-around m-auto sm:w-1/3 sm:justify-between'>
-        <Button variant='download'>
+        <Button variant='download' type='button'>
           <Link href={about.link1.url}>
             <a target='_blank'>{constants.resume}</a>
           </Link>
         </Button>
-        <Button onClick={handleOpenModal}>{constants.skills}</Button>
+        <Button onClick={handleOpenModal} type='button'>
+          {constants.skills}
+        </Button>
       </div>
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
         <div className='mx-4 my-4 sm:my-0'>
