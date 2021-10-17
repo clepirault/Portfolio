@@ -12,4 +12,11 @@ export const constants = {
     portfolio: 'portfolio',
     contact: 'contact',
   },
+  contactForm: {
+    firstname: 'FirstName',
+    lastname: 'LastName',
+    email: 'Email Address',
+    subject: 'Subject',
+    message: 'Message',
+  },
 };

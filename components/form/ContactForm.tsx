@@ -4,7 +4,11 @@ import Button from '../button/Button';
 import { ToastContainer, toast } from 'react-toastify';
 
 type Props = {
-  //
+  firstname: string;
+  lastname: string;
+  email: string;
+  subject: string;
+  message: string;
 };
 
 type Values = {
@@ -15,7 +19,8 @@ type Values = {
   Message: string;
 };
 
-const ContactForm: FC<Props> = () => {
+const ContactForm: FC<Props> = (props) => {
+  const { firstname, lastname, email, subject, message } = props;
   const initialValues = {
     FirstName: '',
     LastName: '',
@@ -27,8 +32,12 @@ const ContactForm: FC<Props> = () => {
   const onSubmit = async (values: Values, { resetForm }) => {
     console.log(JSON.stringify(values));
     await resetForm({});
-    await toast('Thank you for your message');
+    await toast('Thank you for your message !');
   };
+
+  const input =
+    'border-solid border-gray-300 border rounded-sm bg-white w-full';
+  const row = 'flex flex-col mb-8';
 
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
@@ -37,29 +46,59 @@ const ContactForm: FC<Props> = () => {
           <div className='flex flex-col items-center w-full'>
             <Form>
               <div className='flex sm:flex-row flex-col'>
-                <div className='flex flex-col mr-2'>
-                  <label htmlFor='FirstName'>First Name</label>
-                  <Field id='FirstName' name='FirstName'></Field>
+                <div className='flex flex-col mr-2 mb-8'>
+                  <label htmlFor='FirstName'>{firstname}</label>
+                  <Field id='FirstName' name='FirstName' type='text'>
+                    {({ field }) => (
+                      <input type='text' className={input} {...field} />
+                    )}
+                  </Field>
                 </div>
-                <div className='flex flex-col'>
-                  <label htmlFor='LastName'>Last Name</label>
-                  <Field id='LastName' name='LastName'></Field>
+                <div className={row}>
+                  <label htmlFor='LastName'>{lastname}</label>
+                  <div>
+                    <Field id='LastName' name='LastName'>
+                      {({ field }) => (
+                        <input type='text' className={input} {...field} />
+                      )}
+                    </Field>
+                  </div>
                 </div>
               </div>
-              <div className='flex flex-col'>
-                <label htmlFor='EmailAddress'>Email Address</label>
-                <Field id='EmailAddress' name='EmailAddress'></Field>
+              <div className={row}>
+                <label htmlFor='EmailAddress'>{email}</label>
+                <div>
+                  <Field id='EmailAddress' name='EmailAddress'>
+                    {({ field }) => (
+                      <input type='email' className={input} {...field} />
+                    )}
+                  </Field>
+                </div>
               </div>
-              <div className='flex flex-col'>
-                <label htmlFor='Subject'>Subject</label>
-                <Field id='Subject' name='Subject'></Field>
+              <div className={row}>
+                <label htmlFor='Subject'>{subject}</label>
+                <div>
+                  <Field id='Subject' name='Subject'>
+                    {({ field }) => (
+                      <input type='text' className={input} {...field} />
+                    )}
+                  </Field>
+                </div>
               </div>
-              <div className='flex flex-col'>
-                <label htmlFor='Message'>Message</label>
-                <Field id='Message' name='Message'></Field>
+              <div className={row}>
+                <label htmlFor='Message'>{message}</label>
+                <div>
+                  <Field id='Message' name='Message'>
+                    {({ field }) => (
+                      <textarea rows='5' className={input} {...field} />
+                    )}
+                  </Field>
+                </div>
               </div>
-              <div>
-                <Button type='submit'>Submit</Button>
+              <div className='my-8'>
+                <div className='mb-4'>
+                  <Button type='submit'>Submit</Button>
+                </div>
                 <ToastContainer />
               </div>
             </Form>

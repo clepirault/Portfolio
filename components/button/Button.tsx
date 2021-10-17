@@ -11,7 +11,7 @@ type Props = {
 const Button: FC<Props> = (props) => {
   const { children, onClick, variant, type } = props;
   return (
-    <span className='inline-flex items-center border-solid border-3 border-black text-black px-4 py-2'>
+    <span className='inline-flex items-center border-solid border-[3px] border-black text-black px-4 py-2'>
       <button type={type} onClick={onClick} className='tracking-widest'>
         {children}
       </button>

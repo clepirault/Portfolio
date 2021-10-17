@@ -7,8 +7,16 @@ import { constants } from '../utils/constants/constants';
 const Contact: NextPage = () => {
   return (
     <MainLayout>
-      <PageTitle>{constants.pages.contact}</PageTitle>
-      <ContactForm />
+      <div className='mb-20'>
+        <PageTitle>{constants.pages.contact}</PageTitle>
+      </div>
+      <ContactForm
+        firstname={constants.contactForm.firstname}
+        lastname={constants.contactForm.lastname}
+        email={constants.contactForm.email}
+        subject={constants.contactForm.subject}
+        message={constants.contactForm.message}
+      />
     </MainLayout>
   );
 };
