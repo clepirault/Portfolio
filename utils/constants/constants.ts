@@ -13,8 +13,8 @@ export const constants = {
     contact: 'contact',
   },
   contactForm: {
-    firstname: 'FirstName',
-    lastname: 'LastName',
+    firstname: 'Firstname',
+    lastname: 'Lastname',
     email: 'Email Address',
     subject: 'Subject',
     message: 'Message',

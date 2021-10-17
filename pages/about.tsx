@@ -9,7 +9,7 @@ import Button from '../components/button/Button';
 import PageTitle from '../components/title/PageTitle';
 import AboutContent from '../components/content/AboutContent';
 import MainLayout from '../components/layout/MainLayout';
-import SkillsContent from '../components/content/SkillsContent';
+import OtherContent from '../components/content/OtherContent';
 import { useState } from 'react';
 
 type About = {
@@ -75,7 +75,12 @@ const About: NextPage<Props> = (props) => {
           />
         </div>
       </div>
-      {isModalOpen && <SkillsContent />}
+      {isModalOpen && (
+        <OtherContent
+          illustration={about.image3.url}
+          content={RichText.asText(about.description2)}
+        />
+      )}
     </MainLayout>
   );
 };

@@ -30,6 +30,7 @@ const Project: NextPage<Props> = (props) => {
         title={project.title[0].text}
         image={project.image.url}
         description={project.description[0].text}
+        video={project.media.url}
       />
     </MainLayout>
   );
