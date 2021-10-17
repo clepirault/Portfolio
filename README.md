@@ -1,5 +1,5 @@
-#Portfolio version 2
+# Portfolio version 2
 
-##Stack
+## Stack
 
-<p>TypeScript, ReactJS (NextJS), Prismic</p>
+TypeScript, ReactJS (NextJS), Prismic
