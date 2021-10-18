@@ -2,15 +2,13 @@ import { FC } from 'react';
 import { AiOutlineCopyrightCircle } from 'react-icons/ai';
 import { constants } from '../../utils/constants/constants';
 
-type Props = {};
-
-const Footer: FC<Props> = () => {
+const Footer: FC = () => {
   return (
     <footer>
-      <h5 className='flex items-center'>
+      <span className='flex items-center text-sm'>
         <AiOutlineCopyrightCircle /> {constants.fullname}{' '}
         {new Date().getFullYear()}
-      </h5>
+      </span>
     </footer>
   );
 };

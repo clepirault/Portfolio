@@ -7,6 +7,7 @@ export const constants = {
     linkedin: 'https://www.linkedin.com/in/clemence-pirault/',
     github: 'https://github.com/clepirault',
   },
+  stack: 'Website developed in TypeScript, React, with Prismic & Next.js',
   pages: {
     about: 'about',
     portfolio: 'portfolio',
@@ -18,5 +19,11 @@ export const constants = {
     email: 'Email Address',
     subject: 'Subject',
     message: 'Message',
+  },
+  contactInfos: {
+    location: 'Nantes, France',
+    remote: 'full remote',
+    email: 'clepirault@gmail.com',
+    mobile: '+33648981540',
   },
 };

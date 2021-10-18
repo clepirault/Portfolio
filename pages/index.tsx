@@ -18,7 +18,7 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <MainLayout>
-      <div>
+      <div className='relative'>
         <Zoom>
           <HomepageHero
             mainTitle={homepage.primarytitle[0].text}
@@ -45,6 +45,9 @@ const Home: NextPage<Props> = (props) => {
             </Link>
           </Button>
         </div>
+        <p className='hidden sm:text-sm sm:block sm:fixed sm:bottom-0 sm:right-1'>
+          {constants.stack}
+        </p>
       </div>
     </MainLayout>
   );
