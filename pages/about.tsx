@@ -11,6 +11,7 @@ import AboutContent from '../components/content/AboutContent';
 import MainLayout from '../components/layout/MainLayout';
 import OtherContent from '../components/content/OtherContent';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 type About = {
   // content
@@ -23,10 +24,16 @@ type Props = {
 const About: NextPage<Props> = (props) => {
   const { about } = props;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const handleOpenModal = () => {
-    setIsModalOpen(true);
+    setOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+    router.push('/about');
   };
 
   return (
@@ -38,8 +45,8 @@ const About: NextPage<Props> = (props) => {
             src={about.image1.url}
             alt={constants.fullname}
             quality={100}
-            width={450}
-            height={300}
+            width='450'
+            height='300'
           />
         </div>
         <div className='mx-4 my-4 sm:my-0'>
@@ -56,7 +63,7 @@ const About: NextPage<Props> = (props) => {
           </Link>
         </Button>
         <Button onClick={handleOpenModal} type='button'>
-          {constants.skills}
+          {constants.others}
         </Button>
       </div>
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
@@ -75,10 +82,13 @@ const About: NextPage<Props> = (props) => {
           />
         </div>
       </div>
-      {isModalOpen && (
+      {open && (
         <OtherContent
-          illustration={about.image3.url}
+          image={about.image3.url}
           content={RichText.asText(about.description2)}
+          open={open}
+          closeModal={handleCloseModal}
+          list={about.list}
         />
       )}
     </MainLayout>
@@ -93,7 +103,7 @@ export async function getStaticProps() {
   /* const home = await client.getSingle("blog_home") */
 
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'abouttest')
+    Prismic.Predicates.at('document.type', 'aboutpage')
   );
   const about = await res.results[0].data;
 

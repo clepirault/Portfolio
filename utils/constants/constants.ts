@@ -2,7 +2,7 @@ export const constants = {
   fullname: 'Clémence Pirault',
   title: 'Junior web Developer',
   resume: 'Resume',
-  skills: 'Learn more',
+  others: 'Learn more',
   links: {
     linkedin: 'https://www.linkedin.com/in/clemence-pirault/',
     github: 'https://github.com/clepirault',
