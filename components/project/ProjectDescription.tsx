@@ -8,9 +8,14 @@ type Props = {
   closeDescription?: () => void;
   open: boolean;
   title: string;
-  image: any;
   description: string;
+  list: Array<any>;
+  contributions: string;
+  stack: Array<any>;
+  image: any;
   video: any;
+  github: string;
+  website: string;
 };
 
 const project = {
@@ -20,7 +25,19 @@ const project = {
 };
 
 const ProjectDescription: FC<Props> = (props) => {
-  const { closeDescription, open, title, image, description, video } = props;
+  const {
+    closeDescription,
+    open,
+    title,
+    description,
+    list,
+    contributions,
+    stack,
+    image,
+    video,
+    github,
+    website,
+  } = props;
   return (
     <MainModal open={open} closeDescription={closeDescription}>
       <button
@@ -31,13 +48,21 @@ const ProjectDescription: FC<Props> = (props) => {
       </button>
       <div className='flex flex-col items-center'>
         <h3>{title}</h3>
-        <video controls width='80%' height='auto'>
-          <source src={video} type='video/mp4' />
-        </video>
+        {video !== undefined ? (
+          <video controls width='80%' height='auto'>
+            <source src={video} type='video/mp4' />
+          </video>
+        ) : (
+          ''
+        )}
       </div>
       <div className='sm:grid sm:grid-cols-2 p-8'>
         <div>
-          <Image src={image} alt={project.image} width='300' height='300' />
+          {image !== undefined ? (
+            <Image src={image} alt={title} width='300' height='300' />
+          ) : (
+            ''
+          )}
         </div>
         <div>
           <AboutContent title={title} content={description} />

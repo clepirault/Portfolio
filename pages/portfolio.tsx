@@ -38,7 +38,7 @@ const Portfolio: NextPage<Props> = (props) => {
 // "getStaticProps" returns an object that contains the props, and inside the info that we want to send into the component
 export async function getStaticProps() {
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'project-test') // 2nd arg is the API ID of the custom type
+    Prismic.Predicates.at('document.type', 'project') // 2nd arg is the API ID of the custom type
   );
 
   const portfolio = await res.results.map((project) => {

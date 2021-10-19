@@ -26,8 +26,8 @@ const OtherContent: FC<Props> = (props) => {
           src={image}
           alt='react developer'
           quality={100}
-          width={450}
-          height={300}
+          width='450'
+          height='300'
         />
       </div>
       <div className='sm:flex sm:justify-center my-12 p-8'>

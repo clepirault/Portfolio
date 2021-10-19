@@ -28,9 +28,14 @@ const Project: NextPage<Props> = (props) => {
         open={open}
         closeDescription={closeDescription}
         title={project.title[0].text}
+        description={project.description1[0].text}
+        list={project.list}
+        contributions={project.description2[0].text}
+        stack={project.stack}
         image={project.image.url}
-        description={project.description[0].text}
-        video={project.media.url}
+        video={project.video.url}
+        github={project.github.url}
+        website={project.website.url}
       />
     </MainLayout>
   );
@@ -42,7 +47,7 @@ export async function getStaticProps(context: any) {
   const projectUid = params.uid;
 
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'project-test')
+    Prismic.Predicates.at('document.type', 'project')
   );
 
   const projectDetail = await res.results.find(
@@ -60,7 +65,7 @@ export async function getStaticProps(context: any) {
 
 export async function getStaticPaths() {
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'project-test')
+    Prismic.Predicates.at('document.type', 'project')
   );
 
   const paths = await res.results.map((project) => ({

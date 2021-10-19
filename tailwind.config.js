@@ -12,6 +12,8 @@ module.exports = {
         'secondaryBlue': '#1e3b70'
        }),
        gradientColorStops: theme => ({
+        'darkslategray': '#335650',
+        'navajowhite': '#fbd09d',
         'primaryBlue': '#1e3b70',
         'secondaryBlue': '#29539b'
        })        
