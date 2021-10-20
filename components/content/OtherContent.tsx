@@ -21,7 +21,9 @@ const OtherContent: FC<Props> = (props) => {
         <AiOutlineClose />
       </button>
       <div className='flex flex-col content-center p-8'>
-        <AboutContent title='React Developer' content={content} />
+        <div className='sm:p-12'>
+          <AboutContent title='React Developer' content={content} />
+        </div>
         <div className='flex justify-center mt-12'>
           <Image
             src={image}
