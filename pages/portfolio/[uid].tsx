@@ -32,7 +32,7 @@ const Project: NextPage<Props> = (props) => {
         list={project.list}
         contributions={project.description2[0].text}
         stack={project.stack}
-        image={project.image.url}
+        image={project.image}
         video={project.video.url}
         github={project.github.url}
         website={project.website.url}

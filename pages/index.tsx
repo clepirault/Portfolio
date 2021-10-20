@@ -55,7 +55,8 @@ const Home: NextPage<Props> = (props) => {
 
 export async function getStaticProps() {
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'homepage')
+    Prismic.Predicates.at('document.type', 'homepage'),
+    { orderings: '[my.project.date]' }
   );
   const homepage = await res.results[0].data;
 

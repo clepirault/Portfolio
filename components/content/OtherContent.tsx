@@ -32,9 +32,9 @@ const OtherContent: FC<Props> = (props) => {
       </div>
       <div className='sm:flex sm:justify-center my-12 p-8'>
         <ul className='list-disc leading-loose'>
-          <li>{list[0].text}</li>
-          <li>{list[1].text}</li>
-          <li>{list[2].text}</li>
+          {list.map((item, index) => (
+            <li key={index}>{item.text}</li>
+          ))}
         </ul>
       </div>
     </MainModal>

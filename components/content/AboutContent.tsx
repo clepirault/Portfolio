@@ -10,7 +10,7 @@ const AboutContent: FC<Props> = (props) => {
   return (
     <div>
       <h3 className='mb-8'>{title}</h3>
-      <p className='break-words font-aboutDescription text-gray-400 leading-loose'>
+      <p className='break-words font-description text-gray-400 leading-loose'>
         {content}
       </p>
     </div>

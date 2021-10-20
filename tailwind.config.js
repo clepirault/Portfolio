@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'aboutDescription': ['Nunito Sans'] // text description in about page
+        'description': ['Nunito Sans']
        },
        backgroundColor: theme => ({
         'primaryBlue': '#00122e',
