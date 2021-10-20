@@ -20,22 +20,24 @@ const OtherContent: FC<Props> = (props) => {
       <button onClick={closeModal} className='absolute top-0 right-0 text-2xl'>
         <AiOutlineClose />
       </button>
-      <div className='sm:grid sm:grid-cols-2 p-8 items-center'>
+      <div className='flex flex-col content-center p-8'>
         <AboutContent title='React Developer' content={content} />
-        <Image
-          src={image}
-          alt='react developer'
-          quality={100}
-          width='450'
-          height='300'
-        />
-      </div>
-      <div className='sm:flex sm:justify-center my-12 p-8'>
-        <ul className='list-disc leading-loose'>
-          {list.map((item, index) => (
-            <li key={index}>{item.text}</li>
-          ))}
-        </ul>
+        <div className='flex justify-center mt-12'>
+          <Image
+            src={image}
+            alt='react developer'
+            quality={100}
+            width='450'
+            height='300'
+          />
+        </div>
+        <div className='flex justify-center my-12'>
+          <ul className='list-disc leading-loose'>
+            {list.map((item, index) => (
+              <li key={index}>{item.text}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </MainModal>
   );

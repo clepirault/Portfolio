@@ -44,7 +44,8 @@ const ProjectDescription: FC<Props> = (props) => {
   } = props;
 
   const text =
-    'flex justify-center break-words font-description text-gray-400 leading-loose';
+    'flex justify-center break-words font-description text-gray-400 leading-loose py-8';
+  const bloc = 'sm:grid sm:grid-cols-2 w-full';
 
   const getIcon = (stack) => {
     if (stack === 'html') {
@@ -71,13 +72,13 @@ const ProjectDescription: FC<Props> = (props) => {
     <MainModal open={open} closeDescription={closeDescription}>
       <button
         onClick={closeDescription}
-        className='absolute top-0 right-0 text-2xl'
+        className='absolute top-0 right-0 text-2xl text-[#b9aa95]'
       >
         <AiOutlineClose />
       </button>
       <div className='flex flex-col items-center'>
         <ProjectTitle>{title}</ProjectTitle>
-        <div className='sm:grid sm:grid-cols-2 w-full'>
+        <div className={bloc}>
           <p className={text}>{description}</p>
           <div className='flex justify-center'>
             <ul className='list-disc leading-loose'>
@@ -87,33 +88,27 @@ const ProjectDescription: FC<Props> = (props) => {
             </ul>
           </div>
         </div>
-        <div className='my-12'>
-          {video !== undefined ? (
+        <div className='my-12 mx-2'>
+          {video !== undefined && (
             <video controls width='80%' height='auto'>
               <source src={video} type='video/mp4' />
             </video>
-          ) : (
-            ''
           )}
-          {image.url !== undefined && image.portrait === undefined ? (
+          {image.url !== undefined && image.portrait === undefined && (
             <Image src={image.url} alt={image.alt} width='450' height='300' />
-          ) : (
-            ''
           )}
-          {image.url !== undefined && image.portrait !== undefined ? (
+          {image.url !== undefined && image.portrait !== undefined && (
             <Image
               src={image.portrait.url}
               alt={image.portrait.alt}
               width='200'
               height='400'
             />
-          ) : (
-            ''
           )}
         </div>
-        <div className='sm:grid sm:grid-cols-2 w-full'>
-          <div className='flex justify-center'>
-            <ul className='text-[#b9aa95] text-4xl flex'>
+        <div className={bloc}>
+          <div className='flex justify-center items-center'>
+            <ul className='text-[#b9aa95] text-4xl flex flex-row'>
               {stack.map((item, index) => (
                 <li key={index} className='px-2' title={item.text}>
                   {getIcon(item.text)}
@@ -123,17 +118,21 @@ const ProjectDescription: FC<Props> = (props) => {
           </div>
           <p className={text}>{contributions}</p>
         </div>
-        <div className='flex flex-col h-40 sm:h-auto sm:flex-row sm:w-1/2 justify-around my-20'>
-          <Button type='button'>
-            <Link href={website}>
-              <a target='_blank'>website</a>
-            </Link>
-          </Button>
-          <Button type='button'>
-            <Link href={github}>
-              <a target='_blank'>watch the code</a>
-            </Link>
-          </Button>
+        <div className='flex flex-col h-40 items-center sm:h-auto sm:flex-row sm:w-[60%] justify-around my-20'>
+          {website !== undefined && (
+            <Button type='button'>
+              <Link href={website}>
+                <a target='_blank'>website</a>
+              </Link>
+            </Button>
+          )}
+          {github !== undefined && (
+            <Button type='button'>
+              <Link href={github}>
+                <a target='_blank'>watch the code</a>
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </MainModal>

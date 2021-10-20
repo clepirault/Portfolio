@@ -7,7 +7,7 @@ type Props = {
 const SecondaryTitle: FC<Props> = (props) => {
   const { children } = props;
   return (
-    <h3 className='tracking-wider text-3xl text-[#b9aa95] capitalize'>
+    <h3 className='tracking-wider text-2xl sm:text-3xl text-[#b9aa95] capitalize'>
       {children}
     </h3>
   );

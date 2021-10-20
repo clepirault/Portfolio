@@ -15,10 +15,11 @@ type Props = {
 
 const Home: NextPage<Props> = (props) => {
   const { homepage } = props;
+  // homepage.resume.url
 
   return (
     <MainLayout>
-      <div className='relative'>
+      <div>
         <Zoom>
           <HomepageHero
             mainTitle={homepage.primarytitle[0].text}
@@ -29,26 +30,17 @@ const Home: NextPage<Props> = (props) => {
           />
         </Zoom>
       </div>
-      <div className='sm:flex sm:flex-row'>
-        <div className='hidden sm:flex sm:justify-center sm:mb-12 sm:mx-12 sm:w-1/2'>
-          <Image
-            src={homepage.image.url}
-            alt={homepage.image.alt}
-            width='600'
-            height='400'
-          />
-        </div>
-        <div className='hidden'>
-          <Button variant='download' type='button'>
-            <Link href={homepage.resume.url}>
-              <a target='_blank'>{constants.resume}</a>
-            </Link>
-          </Button>
-        </div>
-        <p className='hidden sm:text-sm sm:block sm:fixed sm:bottom-0 sm:right-1'>
-          {constants.stack}
-        </p>
+      <div className='mt-16 mb-0 sm:my-12 sm:mx-12'>
+        <Image
+          src={homepage.image.url}
+          alt={homepage.image.alt}
+          width='600'
+          height='400'
+        />
       </div>
+      <p className='hidden sm:text-sm sm:block sm:absolute sm:bottom-0 sm:right-1'>
+        {constants.stack}
+      </p>
     </MainLayout>
   );
 };

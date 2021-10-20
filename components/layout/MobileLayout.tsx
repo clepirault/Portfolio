@@ -38,7 +38,7 @@ const MobileLayout: FC<Props> = (props) => {
       )}
       {!menuOpen && (
         <main className='bg-gray-100'>
-          <div className='bg-white flex justify-end'>
+          <div className='flex justify-end'>
             <button className='text-4xl' type='button' onClick={handleOpen}>
               <AiOutlineMenu />
             </button>
