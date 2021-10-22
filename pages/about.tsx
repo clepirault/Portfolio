@@ -40,7 +40,7 @@ const About: NextPage<Props> = (props) => {
     <MainLayout>
       <PageTitle>{constants.pages.about}</PageTitle>
       <div className='flex flex-col my-24 sm:grid sm:grid-cols-2 sm:mx-12'>
-        <div className='flex justify-center mx-4'>
+        <div className='flex justify-center mx-4 mb-8 sm:mb-0'>
           <Image
             src={about.image1.url}
             alt={constants.fullname}
@@ -73,7 +73,7 @@ const About: NextPage<Props> = (props) => {
             content={RichText.asText(about.description2)}
           />
         </div>
-        <div className='flex justify-center mx-4'>
+        <div className='flex justify-center mx-4 mt-8 sm:mt-0'>
           <Image
             src={about.image2.url}
             alt={constants.fullname}
@@ -84,11 +84,13 @@ const About: NextPage<Props> = (props) => {
       </div>
       {open && (
         <OtherContent
-          image={about.image3.url}
-          content={RichText.asText(about.description2)}
+          image={about.image3}
+          content={RichText.asText(about.description3)}
+          title={about.title3[0].text}
           open={open}
           closeModal={handleCloseModal}
           list={about.list}
+          skills={about.skills}
         />
       )}
     </MainLayout>

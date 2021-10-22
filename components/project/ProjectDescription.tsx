@@ -5,15 +5,7 @@ import MainModal from '../modal/MainModal';
 import Button from '../button/Button';
 import Link from 'next/link';
 import ProjectTitle from '../title/ProjectTitle';
-import { AiFillHtml5 } from 'react-icons/ai';
-import { FaCss3Alt, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import SecondaryTitle from '../title/SecondaryTitle';
-import {
-  SiJavascript,
-  SiNextDotJs,
-  SiMysql,
-  SiTypescript,
-} from 'react-icons/si';
+import SkillsContent from '../content/SkillsContent';
 
 type Props = {
   closeDescription?: () => void;
@@ -45,29 +37,7 @@ const ProjectDescription: FC<Props> = (props) => {
   } = props;
 
   const text =
-    'flex justify-center text-justify break-words font-description text-gray-400 leading-loose py-8 px-8';
-  const bloc = 'sm:grid sm:grid-cols-2 w-full';
-
-  const getIcon = (stack) => {
-    if (stack === 'html') {
-      return <AiFillHtml5 />;
-    } else if (stack === 'css') {
-      return <FaCss3Alt />;
-    } else if (stack === 'javascript') {
-      return <SiJavascript />;
-    } else if (stack === 'typescript') {
-      return <SiTypescript />;
-    } else if (stack === 'react') {
-      return <FaReact />;
-    } else if (stack === 'node') {
-      return <FaNodeJs />;
-    } else if (stack === 'mysql') {
-      return <SiMysql />;
-    } else if (stack === 'git') {
-      return <FaGitAlt />;
-    }
-    return stack;
-  };
+    'text-justify break-words font-description text-gray-400 leading-loose p-8 sm:mx-8';
 
   return (
     <MainModal open={open} closeDescription={closeDescription}>
@@ -79,19 +49,18 @@ const ProjectDescription: FC<Props> = (props) => {
       </button>
       <div className='flex flex-col items-center'>
         <ProjectTitle>{title}</ProjectTitle>
-        <div className={bloc}>
-          <p className={text}>{description}</p>
-          <div className='flex justify-center items-center'>
-            <ul className='list-disc leading-loose'>
-              {list.map((item, index) => (
-                <li key={index} className='capitalize'>
-                  {item.text}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <p className={text}>{description}</p>
+        <SkillsContent skills={stack} />
+        <div className='flex justify-center items-center my-16'>
+          <ul className='list-disc leading-loose'>
+            {list.map((item, index) => (
+              <li key={index} className='capitalize'>
+                {item.text}
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className='my-12 mx-2'>
+        <div className='m-2'>
           {video !== undefined && (
             <video controls width='80%' height='auto'>
               <source src={video} type='video/mp4' />
@@ -109,21 +78,9 @@ const ProjectDescription: FC<Props> = (props) => {
             />
           )}
         </div>
-        <div className={bloc}>
-          <div className='flex items-center justify-center'>
-            <div className='flex flex-col items-center text-[#b9aa95]'>
-              <h3 className='mb-4'>Stack</h3>
-              <ul className='text-4xl flex flex-row'>
-                {stack.map((item, index) => (
-                  <li key={index} className='px-2' title={item.text}>
-                    {getIcon(item.text)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        {contributions !== undefined && contributions !== '' && (
           <p className={text}>{contributions}</p>
-        </div>
+        )}
         <div className='flex flex-col h-40 items-center sm:h-auto sm:flex-row sm:w-[60%] justify-around my-20'>
           {website !== undefined && (
             <Button type='button' variant='link'>
