@@ -2,6 +2,8 @@ export const constants = {
   fullname: 'Clémence Pirault',
   title: 'Junior web Developer',
   resume: 'Resume',
+  wcs: 'WCS program',
+  copyright: 'all rights reserved',
   others: 'Learn more',
   links: {
     linkedin: 'https://www.linkedin.com/in/clemence-pirault/',

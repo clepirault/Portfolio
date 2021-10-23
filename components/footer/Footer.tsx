@@ -7,7 +7,7 @@ const Footer: FC = () => {
     <footer>
       <span className='flex items-center text-sm'>
         <AiOutlineCopyrightCircle /> {constants.fullname}{' '}
-        {new Date().getFullYear()}
+        {new Date().getFullYear()} {constants.copyright}
       </span>
     </footer>
   );

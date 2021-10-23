@@ -71,6 +71,7 @@ const About: NextPage<Props> = (props) => {
           <AboutContent
             title={about.title2[0].text}
             content={RichText.asText(about.description2)}
+            link={about.link2.url}
           />
         </div>
         <div className='flex justify-center mx-4 mt-8 sm:mt-0'>

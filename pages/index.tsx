@@ -1,11 +1,9 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import { client } from '../prismic-config';
 import Prismic from 'prismic-javascript';
 import Image from 'next/image';
 import MainLayout from '../components/layout/MainLayout';
 import Zoom from 'react-reveal/Zoom';
-import Button from '../components/button/Button';
 import { constants } from '../utils/constants/constants';
 import HomepageHero from '../components/content/HomepageHero';
 
@@ -15,7 +13,6 @@ type Props = {
 
 const Home: NextPage<Props> = (props) => {
   const { homepage } = props;
-  // homepage.resume.url
 
   return (
     <MainLayout>
