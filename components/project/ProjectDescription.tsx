@@ -66,10 +66,10 @@ const ProjectDescription: FC<Props> = (props) => {
               <source src={video} type='video/mp4' />
             </video>
           )}
-          {image.url !== undefined && image.portrait === undefined && (
+          {image.url !== undefined && image.portrait.alt === null && (
             <Image src={image.url} alt={image.alt} width='450' height='300' />
           )}
-          {image.url !== undefined && image.portrait !== undefined && (
+          {image.url !== undefined && image.portrait.alt !== null && (
             <Image
               src={image.portrait.url}
               alt={image.portrait.alt}
@@ -78,9 +78,7 @@ const ProjectDescription: FC<Props> = (props) => {
             />
           )}
         </div>
-        {contributions !== undefined && contributions !== '' && (
-          <p className={text}>{contributions}</p>
-        )}
+        <p className={text}>{contributions}</p>
         <div className='flex flex-col h-40 items-center sm:h-auto sm:flex-row sm:w-[60%] justify-around my-20'>
           {website !== undefined && (
             <Button type='button' variant='link'>
