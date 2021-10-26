@@ -6,6 +6,9 @@ import {
   SiTypescript,
   SiGraphql,
   SiMongodb,
+  SiJest,
+  SiPrismic,
+  SiTailwindcss,
 } from 'react-icons/si';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaAws } from 'react-icons/fa';
@@ -42,6 +45,12 @@ const SkillsContent: FC<Props> = (props) => {
       return <SiMongodb />;
     } else if (skill === 'aws') {
       return <FaAws />;
+    } else if (skill === 'jest') {
+      return <SiJest />;
+    } else if (skill === 'prismic') {
+      return <SiPrismic />;
+    } else if (skill === 'tailwind') {
+      return <SiTailwindcss />;
     }
     return skill;
   };

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Field, FieldProps, Form, Formik } from 'formik';
+import { Field, FormikHelpers, Form, Formik } from 'formik';
 import Button from '../button/Button';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -30,9 +30,21 @@ const ContactForm: FC<Props> = (props) => {
   };
 
   const onSubmit = async (values: Values, { resetForm }) => {
-    console.log(JSON.stringify(values));
-    await resetForm({});
-    await toast('Thank you for your message !');
+    try {
+      await fetch('/api/sendgrid', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify(values),
+      });
+      await toast('Thank you for your message !');
+      await resetForm({});
+    } catch (error) {
+      toast('Something went wrong');
+    }
   };
 
   const input =
@@ -41,7 +53,7 @@ const ContactForm: FC<Props> = (props) => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
-      {({ isSubmitting, values }) => {
+      {({ isSubmitting }) => {
         return (
           <div className='flex flex-col items-center w-full'>
             <Form>

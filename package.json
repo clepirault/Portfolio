@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prismicio/client": "^5.1.0",
+    "@sendgrid/mail": "^7.5.0",
     "@types/react-modal": "^3.12.1",
     "formik": "^2.2.9",
     "next": "11.1.2",

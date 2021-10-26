@@ -11,6 +11,14 @@ import { FiChevronDown } from 'react-icons/fi';
 import FilterButton from '../components/button/FilterButton';
 // "prismic-reactjs" You can convert rich text from Prismic into HTML with it
 
+const filters = [
+  { label: 'all', value: '' },
+  { label: 'typescript', value: 'typescript' },
+  { label: 'react', value: 'react' },
+  { label: 'wild code school', value: 'wild code school project' },
+  { label: 'mobile device', value: 'mobile device' },
+];
+
 type Props = {
   portfolio: string[];
 };
@@ -28,10 +36,15 @@ const Portfolio: NextPage<Props> = (props) => {
 
   const handleClick = (e) => {
     setInfo(e.target.value);
+    setOpen(!open);
   };
 
   const handleOpenFilter = () => {
     setOpen(!open);
+  };
+
+  const handleRemoveFilter = () => {
+    setInfo('');
   };
 
   return (
@@ -47,34 +60,29 @@ const Portfolio: NextPage<Props> = (props) => {
         {open && (
           <div className='flex flex-col text-sm sm:flex-row sm:justify-center mt-4'>
             <div className='flex flex-col items-center sm:flex-row sm:w-[80%] sm:justify-between leading-loose gap-2'>
-              <FilterButton onClick={handleClick} value='' type='button'>
-                all
-              </FilterButton>
-              <FilterButton
-                onClick={handleClick}
-                value='typescript'
-                type='button'
-              >
-                typescript
-              </FilterButton>
-              <FilterButton onClick={handleClick} value='react' type='button'>
-                react
-              </FilterButton>
-              <FilterButton
-                onClick={handleClick}
-                value='wild code school project'
-                type='button'
-              >
-                wild code school project
-              </FilterButton>
-              <FilterButton
-                onClick={handleClick}
-                value='mobile device'
-                type='button'
-              >
-                mobile device
-              </FilterButton>
+              {filters.map((filter, index) => (
+                <FilterButton
+                  onClick={handleClick}
+                  value={filter.value}
+                  type='button'
+                  key={index}
+                  variant='filter'
+                >
+                  {filter.label}
+                </FilterButton>
+              ))}
             </div>
+          </div>
+        )}
+        {info !== '' && (
+          <div className='sm:ml-12 mt-12 flex justify-center sm:block'>
+            <FilterButton
+              onClick={handleRemoveFilter}
+              type='button'
+              variant='selectedFilter'
+            >
+              {info}
+            </FilterButton>
           </div>
         )}
 
