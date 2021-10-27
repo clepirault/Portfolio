@@ -1,6 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import {
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineDownload,
+} from 'react-icons/ai';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import MainTitle from '../title/MainTitle';
 import SecondaryTitle from '../title/SecondaryTitle';
@@ -11,10 +15,12 @@ type Props = {
   linkedin: string;
   github: string;
   location: string;
+  resume: string;
 };
 
 const HomepageHero: FC<Props> = (props) => {
-  const { mainTitle, secondaryTitle, linkedin, github, location } = props;
+  const { mainTitle, secondaryTitle, linkedin, github, location, resume } =
+    props;
   return (
     <div className='flex flex-col mx-4 mt-20 sm:items-end sm:mt-36 sm:mx-36 sm:mb-12'>
       <MainTitle>{mainTitle}</MainTitle>

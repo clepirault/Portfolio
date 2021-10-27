@@ -24,6 +24,7 @@ const Home: NextPage<Props> = (props) => {
             linkedin={homepage.linkedin.url}
             github={homepage.github.url}
             location={homepage.optionalcontent[0].text}
+            resume={homepage.resume.url}
           />
         </Zoom>
       </div>

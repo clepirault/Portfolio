@@ -15,8 +15,8 @@ const filters = [
   { label: 'all', value: '' },
   { label: 'typescript', value: 'typescript' },
   { label: 'react', value: 'react' },
+  { label: 'API integration', value: 'API integration' },
   { label: 'wild code school', value: 'wild code school project' },
-  { label: 'mobile device', value: 'mobile device' },
 ];
 
 type Props = {
