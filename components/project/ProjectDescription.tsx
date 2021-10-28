@@ -60,7 +60,7 @@ const ProjectDescription: FC<Props> = (props) => {
             ))}
           </ul>
         </div>
-        <div className='m-2'>
+        <div className='m-2 flex justify-center'>
           {video !== undefined && (
             <video controls width='80%' height='auto'>
               <source src={video} type='video/mp4' />
