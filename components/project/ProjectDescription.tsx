@@ -51,7 +51,7 @@ const ProjectDescription: FC<Props> = (props) => {
         <ProjectTitle>{title}</ProjectTitle>
         <p className={text}>{description}</p>
         <SkillsContent skills={stack} />
-        <div className='flex justify-center items-center my-16'>
+        <div className='flex justify-center items-center my-16 mx-12'>
           <ul className='list-disc leading-loose'>
             {list.map((item, index) => (
               <li key={index} className='capitalize'>
@@ -79,7 +79,7 @@ const ProjectDescription: FC<Props> = (props) => {
           )}
         </div>
         <p className={text}>{contributions}</p>
-        <div className='flex flex-col h-40 items-center sm:h-auto sm:flex-row sm:w-[60%] justify-around my-20'>
+        <div className='flex flex-col h-40 items-center sm:h-auto sm:flex-row sm:w-[60%] justify-around mt-12 mb-20'>
           {website !== undefined && (
             <Button type='button' variant='link'>
               <Link href={website}>

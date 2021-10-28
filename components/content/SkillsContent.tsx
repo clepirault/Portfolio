@@ -57,7 +57,7 @@ const SkillsContent: FC<Props> = (props) => {
 
   return (
     <div className='flex items-center justify-center'>
-      <div className='flex flex-col items-center text-[#b9aa95]'>
+      <div className='flex flex-col items-center text-[#b9aa95] mx-8'>
         <h3 className='mb-4'>Skills</h3>
         <ul className='text-4xl flex justify-center flex-wrap gap-6'>
           {skills.map((item, index) => (
