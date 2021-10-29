@@ -36,7 +36,7 @@ const Home: NextPage<Props> = (props) => {
           height='400'
         />
       </div>
-      <p className='hidden sm:text-sm sm:block sm:absolute sm:bottom-0 sm:right-1'>
+      <p className='hidden sm:text-sm sm:block sm:fixed sm:bottom-2 sm:right-2 sm:bg-white sm:rounded-lg sm:shadow-xl sm:px-2 sm:py-1'>
         {constants.stack}
       </p>
     </MainLayout>

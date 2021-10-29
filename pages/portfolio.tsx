@@ -87,7 +87,7 @@ const Portfolio: NextPage<Props> = (props) => {
         )}
 
         <div className='flex justify-center mb-12 mt-12'>
-          <div className='sm:grid sm:grid-cols-2 flex flex-col'>
+          <div className='sm:grid sm:grid-cols-2 sm:gap-20 flex flex-col'>
             {portfolio
               .filter(
                 (project: any) =>

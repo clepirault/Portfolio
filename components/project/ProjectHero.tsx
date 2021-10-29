@@ -19,7 +19,7 @@ const ProjectHero: FC<Props> = (props) => {
 
   return (
     <button onClick={handleClick}>
-      <div className='flex justify-center items-center w-80 h-80 m-4 bg-black text-white sm:border-solid sm:border-[3px] sm:border-black sm:bg-gray-100 sm:text-black sm:hover:bg-black sm:hover:text-white'>
+      <div className='flex justify-center items-center w-80 h-80 mb-8 sm:mb-0 bg-black text-white sm:border-solid sm:border-[3px] sm:border-black sm:bg-gray-100 sm:text-black sm:hover:bg-black sm:hover:text-white'>
         <h3 className='capitalize tracking-widest'>{title}</h3>
       </div>
     </button>

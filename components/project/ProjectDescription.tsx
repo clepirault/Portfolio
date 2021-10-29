@@ -50,9 +50,11 @@ const ProjectDescription: FC<Props> = (props) => {
       <div className='flex flex-col items-center'>
         <ProjectTitle>{title}</ProjectTitle>
         <p className={text}>{description}</p>
-        <SkillsContent skills={stack} />
+        <div className='px-8'>
+          <SkillsContent skills={stack} />
+        </div>
         <div className='flex justify-center items-center my-16 mx-12'>
-          <ul className='list-disc leading-loose'>
+          <ul className='list-disc leading-loose w-[90%] sm:w-[60%]'>
             {list.map((item, index) => (
               <li key={index} className='capitalize'>
                 {item.text}
@@ -60,9 +62,9 @@ const ProjectDescription: FC<Props> = (props) => {
             ))}
           </ul>
         </div>
-        <div className='m-2 flex justify-center'>
+        <div className='px-8 flex justify-center'>
           {video !== undefined && (
-            <video controls width='80%' height='auto'>
+            <video controls width='100%' height='auto'>
               <source src={video} type='video/mp4' />
             </video>
           )}
