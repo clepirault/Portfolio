@@ -37,7 +37,7 @@ const ProjectDescription: FC<Props> = (props) => {
   } = props;
 
   const text =
-    'text-justify break-words font-description text-gray-400 leading-loose p-8 sm:mx-8';
+    'text-justify break-words font-description text-gray-400 leading-loose sm:px-8 py-8';
 
   return (
     <MainModal open={open} closeDescription={closeDescription}>
@@ -47,22 +47,22 @@ const ProjectDescription: FC<Props> = (props) => {
       >
         <AiOutlineClose />
       </button>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center px-8'>
         <ProjectTitle>{title}</ProjectTitle>
         <p className={text}>{description}</p>
-        <div className='px-8'>
-          <SkillsContent skills={stack} />
+        <SkillsContent skills={stack} />
+        <div className='flex justify-center items-center w-full'>
+          <div className='py-16 px-4 sm:px-0 w-[90%] sm:w-[40%]'>
+            <ul className='list-disc leading-loose'>
+              {list.map((item, index) => (
+                <li key={index} className='capitalize'>
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className='flex justify-center items-center my-16 mx-12'>
-          <ul className='list-disc leading-loose w-[90%] sm:w-[60%]'>
-            {list.map((item, index) => (
-              <li key={index} className='capitalize'>
-                {item.text}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className='px-8 flex justify-center'>
+        <div className='flex justify-center'>
           {video !== undefined && (
             <video controls width='100%' height='auto'>
               <source src={video} type='video/mp4' />
@@ -76,7 +76,7 @@ const ProjectDescription: FC<Props> = (props) => {
               src={image.portrait.url}
               alt={image.portrait.alt}
               width='200'
-              height='400'
+              height='350'
             />
           )}
         </div>

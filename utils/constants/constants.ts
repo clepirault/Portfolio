@@ -9,7 +9,7 @@ export const constants = {
     linkedin: 'https://www.linkedin.com/in/clemence-pirault/',
     github: 'https://github.com/clepirault',
   },
-  stack: 'Website developed in TypeScript, React, with Prismic & Next.js',
+  stack: 'Made in TypeScript, React, with Next.js & Prismic',
   pages: {
     about: 'about',
     portfolio: 'portfolio',

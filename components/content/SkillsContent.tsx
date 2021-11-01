@@ -2,7 +2,6 @@ import { FC } from 'react';
 import {
   SiJavascript,
   SiNextDotJs,
-  SiMysql,
   SiTypescript,
   SiGraphql,
   SiMongodb,
@@ -11,6 +10,7 @@ import {
   SiTailwindcss,
 } from 'react-icons/si';
 import { AiFillHtml5 } from 'react-icons/ai';
+import { DiScrum, DiMysql } from 'react-icons/di';
 import { FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaAws } from 'react-icons/fa';
 
 type Props = {
@@ -33,8 +33,10 @@ const SkillsContent: FC<Props> = (props) => {
       return <FaReact />;
     } else if (skill === 'node') {
       return <FaNodeJs />;
+    } else if (skill === 'express') {
+      return 'Ex';
     } else if (skill === 'mysql') {
-      return <SiMysql />;
+      return <DiMysql />;
     } else if (skill === 'git') {
       return <FaGitAlt />;
     } else if (skill === 'next') {
@@ -51,6 +53,8 @@ const SkillsContent: FC<Props> = (props) => {
       return <SiPrismic />;
     } else if (skill === 'tailwind') {
       return <SiTailwindcss />;
+    } else if (skill === 'scrum') {
+      return <DiScrum />;
     }
     return skill;
   };
@@ -58,11 +62,11 @@ const SkillsContent: FC<Props> = (props) => {
   return (
     <div className='flex items-center justify-center'>
       <div className='flex flex-col items-center text-[#b9aa95]'>
-        <h3 className='mb-4'>Skills</h3>
+        <h3 className='mb-4 text-3xl'>Skills</h3>
         <ul className='text-4xl flex justify-center flex-wrap gap-6'>
           {skills.map((item, index) => (
-            <li key={index} title={item.text}>
-              {getIcon(item.text)}
+            <li key={index} className='flex flex-col items-center'>
+              {getIcon(item.text)} <span className='text-xs'>{item.text}</span>
             </li>
           ))}
         </ul>

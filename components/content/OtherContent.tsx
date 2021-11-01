@@ -37,7 +37,7 @@ const OtherContent: FC<Props> = (props) => {
           />
         </div>
         <div className='flex justify-center my-12'>
-          <div className='sm:w-1/2'>
+          <div className='sm:w-1/2 px-4'>
             <ul className='list-disc'>
               {list.map((item, index) => (
                 <li key={index} className='mb-6'>

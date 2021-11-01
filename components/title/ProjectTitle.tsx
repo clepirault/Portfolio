@@ -7,7 +7,9 @@ type Props = {
 const ProjectTitle: FC<Props> = (props) => {
   const { children } = props;
   return (
-    <h3 className='text-3xl text-[#b9aa95] my-12 capitalize'>{children}</h3>
+    <h3 className='text-3xl text-[#b9aa95] my-12 capitalize text-center'>
+      {children}
+    </h3>
   );
 };
 
