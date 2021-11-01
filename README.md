@@ -1,5 +1,12 @@
-# Portfolio version 2
+# Portfolio V2
 
-## Stack
+👩 Personal project
+💻 Responsive
 
-TypeScript, ReactJS (NextJS), Prismic
+## Goals 🎯 :
+* 1 repository (no server repository)
+* Add content outside of the repository 👉 headless CMS
+
+## Stack 💎 :
+* Frontend : TypeScript, React, Next
+* Backend - API : Prismic CMS
