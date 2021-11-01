@@ -1,7 +1,7 @@
 # Portfolio V2
 
-👩 Personal project
-💻 Responsive
+<p>👩 Personal project</p>
+<p>💻 Responsive</p>
 
 ## Goals 🎯 :
 * 1 repository (no server repository)
