@@ -6,6 +6,7 @@ import MainLayout from '../components/layout/MainLayout';
 import Zoom from 'react-reveal/Zoom';
 import { constants } from '../utils/constants/constants';
 import HomepageHero from '../components/content/HomepageHero';
+import Link from 'next/link';
 
 type Props = {
   homepage: any; // todo : find other type
@@ -36,8 +37,13 @@ const Home: NextPage<Props> = (props) => {
           height='400'
         />
       </div>
-      <p className='hidden sm:text-sm sm:block sm:fixed sm:bottom-2 sm:right-2 sm:bg-white sm:rounded-lg sm:shadow-xl sm:px-2 sm:py-1'>
-        {constants.stack}
+      <p className='hidden sm:text-sm sm:block sm:fixed sm:bottom-2 sm:right-2 sm:bg-white sm:bg-opacity-25 sm:shadow-xl sm:px-2 sm:py-1'>
+        {constants.stack}{' '}
+        <Link href='https://clemence-pirault.vercel.app/portfolio/portfolio-v2'>
+          <a target='_blank' className='text-[#b9aa95] hover:underline'>
+            Learn more
+          </a>
+        </Link>
       </p>
     </MainLayout>
   );

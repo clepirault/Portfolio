@@ -24,7 +24,7 @@ export const constants = {
   },
   contactInfos: {
     location: 'Nantes, France',
-    remote: 'full remote',
+    remote: 'Remote-friendly',
     email: 'clepirault@gmail.com',
     mobile: '+33648981540',
   },
