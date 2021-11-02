@@ -5,7 +5,7 @@
 
 ## Goals 🎯 :
 * 1 repository (no server repository)
-* Add content outside of the repository 👉 **headless CMS**
+* Add content easily 👉 **headless CMS**
 
 ## Stack 💎 :
 * Frontend : **TypeScript, React, Next**
