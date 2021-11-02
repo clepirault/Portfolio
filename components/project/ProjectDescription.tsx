@@ -52,7 +52,7 @@ const ProjectDescription: FC<Props> = (props) => {
         <p className={text}>{description}</p>
         <SkillsContent skills={stack} />
         <div className='flex justify-center items-center w-full'>
-          <div className='py-16 px-4 sm:px-0 w-[90%] sm:w-[40%]'>
+          <div className='py-16 px-4 sm:px-0 w-auto'>
             <ul className='list-disc leading-loose'>
               {list.map((item, index) => (
                 <li key={index} className='capitalize'>

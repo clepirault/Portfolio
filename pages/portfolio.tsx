@@ -14,9 +14,9 @@ import FilterButton from '../components/button/FilterButton';
 const filters = [
   { label: 'all', value: '' },
   { label: 'typescript', value: 'typescript' },
-  { label: 'react', value: 'react' },
-  { label: 'API integration', value: 'API integration' },
-  { label: 'wild code school', value: 'wild code school project' },
+  { label: 'internship project', value: 'internship project' },
+  { label: 'personal project', value: 'personal project' },
+  { label: 'wild code school project', value: 'wild code school project' },
 ];
 
 type Props = {
@@ -112,9 +112,9 @@ const Portfolio: NextPage<Props> = (props) => {
 // "getStaticProps" returns an object that contains the props, and inside the info that we want to send into the component
 export async function getStaticProps() {
   const res = await client.query(
-    Prismic.Predicates.at('document.type', 'project')
+    Prismic.Predicates.at('document.type', 'project'),
     // 2nd arg is the API ID of the custom type
-    // { orderings: '[document.date]' }
+    { orderings: '[my.project.order desc]' }
   );
 
   const portfolio = await res.results.map((project) => {
